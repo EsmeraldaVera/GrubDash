@@ -43,7 +43,6 @@ const update = (req, res, next) => {
   };
   res.json({ data: updateDish });
 };
-const destroy = (req, res, next) => {};
 
 function findDish(req, res, next) {
   const { dishId } = req.params;
@@ -110,5 +109,4 @@ module.exports = {
   create: [hasRequiredFields, priceCheck, create],
   read: [findDish, read],
   update: [dishExists, matchId, priceCheck, hasRequiredFields, update],
-  destroy,
 };
