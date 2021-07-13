@@ -20,9 +20,6 @@ function create(req, res) {
   res.status(201).json({ data: newOrder });
 }
 
-function read(req, res) {
-  res.json({ data: res.locals.order });
-}
 const list = (req, res, next) => {
   res.json({ data: orders });
 };
@@ -153,3 +150,4 @@ module.exports = {
   ],
   destroy: [orderExists, validatePendingStatus, destroy],
 };
+
